@@ -5,7 +5,7 @@ module.exports = {
     entry: "./src/js/index.js",
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "js/bundle.js"
+        filename: "js/bundle.[contentHash].js"
     },
     devServer: {
         contentBase: "./dist"
@@ -19,11 +19,17 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.scss$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: "babel-loader"
-                }
+                exclude: /node-modules/,
+                loader: "babel-loader"
             }
         ]
     }

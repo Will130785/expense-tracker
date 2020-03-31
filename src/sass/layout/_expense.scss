@@ -1,0 +1,43 @@
+.expense {
+    grid-row: 3 / 4;
+    grid-column: 7 / -1;
+    text-align: center;
+
+    //Heading
+    &__heading {
+        margin-bottom: 2rem;
+    }
+
+    //Items container
+    &__items {
+        //Set grid
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
+
+    //Income item
+    &__item {
+        text-align: left;
+        grid-column: 4 / 12;
+
+        //Income icon
+        &--pos {
+            display: inline-block;
+            margin-right: 2rem;
+
+        }
+
+        //Name of income
+        &--name {
+            display: inline-block;
+            margin-right: 2rem;
+
+        }
+
+        //Delete button
+        &--del {
+            display: inline-block;
+
+        }
+    }
+}
