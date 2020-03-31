@@ -47,5 +47,18 @@ body {
 
 //New transaction section
 .new-transaction {
-    font-size: 1.4rem;
+
+    &__heading {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
+
+//Set budget section
+.set-budget {
+    
+    &__heading {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
 }

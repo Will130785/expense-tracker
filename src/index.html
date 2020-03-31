@@ -94,7 +94,39 @@
 
         <!-- New transaction section -->
         <div class="new-transaction">
-            New transaction
+            <h2 class="new-transaction__heading">New transaction</h2>
+
+            <!-- New transaction inputs -->
+            <form class="new-transaction__form">
+                <!-- add transaction name -->
+                <label for="transaction" class="new-transaction__form--namelab">Transaction name</label>
+                <input id="transaction" class="new-transaction__form--namein" type="text" placeholder="Enter transaction name">
+
+                <!-- Add amount -->
+                <label for="transaction-amount" class="new-transaction__form--amlab">Transaction amount</label>
+                <input id="transaction-amount" class="new-transaction__form--amin" type="number">
+
+                <!-- Transaction type -->
+                <label for="type" class="new-transaction__form--typelab">Transaction type</label>
+                <select id="type" class="new-transaction__form--typein">
+                    <option value="income" id="type-income">Income</option>
+                    <option value="expense" id="type-expense">Expense</option>
+                </select>
+
+                <!-- Submit Button -->
+                <input type="submit" value="Enter Transaction" id="submit" class="btn new-transaction__form--btn">
+            </form>
+        </div>
+
+        <!-- Set budget -->
+        <div class="set-budget">
+            <h2 class="set-budget__heading">Set budget</h2>
+
+            <!-- Set budget form -->
+            <form class="set-budget__form">
+                <label for="set-budget" class="set-budget__form--lab">Set budget</label>
+                <input id="set-budget" class="set-budget__form--in" type="number">
+            </form>
         </div>
 
         <!-- Current Exchange Rates -->

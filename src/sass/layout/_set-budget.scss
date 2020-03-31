@@ -1,0 +1,27 @@
+.set-budget {
+    grid-row: 9 / 10;
+    grid-column: 3 / 11;
+    
+    &__heading {
+        text-align: center;
+    }
+
+    &__form {
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        &--lab {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            width: 100%;
+
+        }
+
+        &--in {
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            width: 100%;
+
+        }
+    }
+}
