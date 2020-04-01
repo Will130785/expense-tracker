@@ -1,4 +1,6 @@
+//Set budget section styling
 .set-budget {
+    //Set grid position
     grid-row: 9 / 10;
     grid-column: 3 / 11;
     
@@ -7,9 +9,12 @@
     }
 
     &__form {
+        //Activate grid for form
+        display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
 
+        //Position label
         &--lab {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
@@ -17,11 +22,18 @@
 
         }
 
+        //Position input
         &--in {
             grid-column: 1 / -1;
-            grid-row: 1 / 2;
+            grid-row: 2 / 3;
             width: 100%;
 
+        }
+        
+        &--btn {
+            grid-column: 1 / -1;
+            grid-row: 3 / 4;
+            width: 100%;
         }
     }
 }

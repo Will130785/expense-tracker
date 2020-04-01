@@ -9,16 +9,19 @@
     padding: 1rem;
     background-color: silver;
 
+    //Current balance
     &__cur {
         grid-column: 1 / 5;
 
     }
 
+    //Budget
     &__budg {
         grid-column: 5 / 9;
 
     }
 
+    //Budget status
     &__stat {
         grid-column: 9 / -1;
 

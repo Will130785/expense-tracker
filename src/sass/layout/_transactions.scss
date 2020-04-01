@@ -1,4 +1,6 @@
+//New transaction section styling
 .new-transaction {
+    //Set grid position
     grid-row: 7 / 8;
     grid-column: 3 / 11;
     
@@ -7,16 +9,19 @@
     }
 
     &__form {
+        //Apply form grid
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(7, 1fr);
 
+        //Transaction name label
         &--namelab {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
 
         }
 
+        //Transaction name input
         &--namein {
             grid-column: 1 / -1;
             grid-row: 2 / 3;
@@ -24,6 +29,7 @@
 
         }
 
+        //Transaction amount label
         &--amlab {
             grid-column: 1 / -1;
             grid-row: 3 / 4;
@@ -31,6 +37,7 @@
 
         }
 
+        //Transaction amount input
         &--amin {
             grid-column: 1 / -1;
             grid-row: 4 / 5;
@@ -38,6 +45,7 @@
 
         }
 
+        //Transaction type label
         &--typelab {
             grid-column: 1 / -1;
             grid-row: 5 / 6;
@@ -45,6 +53,7 @@
 
         }
 
+        //Transaction type input
         &--typein {
             grid-column: 1 / -1;
             grid-row: 6 / 7;
@@ -52,6 +61,7 @@
 
         }
 
+        //Enter transaction button
         &--btn {
             grid-column: 1 / -1;
             grid-row: 7 / 8;
