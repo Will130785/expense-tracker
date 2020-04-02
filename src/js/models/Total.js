@@ -23,3 +23,7 @@ export const calculateTotals = (type, amount) => {
     console.log(values.totalExpense);
 
 }
+
+export const storageTotals = {
+
+};

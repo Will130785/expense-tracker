@@ -1,9 +1,11 @@
 import "../sass/main.scss";
 import {elements, values} from "./views/base";
-import {displayItem} from "./views/inputView";
-import {calculateTotals} from "./models/Total";
+import {inputData} from "./models/Input";
+import {storageTotals, calculateTotals} from "./models/Total";
+import {displayItem, removeItemFromDisplay} from "./views/inputView";
 import {displayTotals} from "./views/totalsView";
-import {setToLocalStorage} from "./models/LocalStorage";
+import {setToLocalStorage, setTotalsToLocalStorage, removeItemFromLocalStorage} from "./models/LocalStorage";
+import {displayFromLocalStorage} from "./views/localStorageView";
 
 //import input data variables from Input.js
 //import functions from inputView.js
@@ -35,25 +37,66 @@ import {setToLocalStorage} from "./models/LocalStorage";
 
 //Add event listeners
 
+//Event listener for DOM content loaded
+document.addEventListener("DOMContentLoaded", displayFromLocalStorage);
+
 //Event listener for add transaction
 elements.transBtn.addEventListener("click", e => {
     //prevent default button behaviour
     e.preventDefault();
 
-    //Collect form data
-    let transactionName = elements.transName.value;
-    let transactionAmount = elements.transAmount.value;
-    let transactionType = elements.transType.value;
-
-    setToLocalStorage(transactionType, transactionName, transactionAmount);
+    //Collect form data from inputs and store in inputData object
+    inputData.transactionName = elements.transName.value;
+    inputData.transactionAmount = elements.transAmount.value;
+    inputData.transactionType = elements.transType.value;
 
     //Append transaction item to container
-    displayItem(transactionType, transactionName, transactionAmount);
-
+    displayItem(inputData.transactionType, inputData.transactionName, inputData.transactionAmount);
 
     //Calculate totals
-    calculateTotals(transactionType, transactionAmount);
+    calculateTotals(inputData.transactionType, inputData.transactionAmount);
+
+    //Prepare totals for storage object
+    storageTotals.currBalance = values.currentBalance;
+    storageTotals.totIncome = values.totalIncome;
+    storageTotals.totExpense = values.totalExpense;
+
+    //Set items and totals to local storage
+    setToLocalStorage(inputData);
+
+    setTotalsToLocalStorage(storageTotals);
+
     //Display totals
+    displayTotals();
+
+});
+
+//Event listener to remove item
+elements.overallContainer.addEventListener("click", e => {
+
+    removeItemFromDisplay(e);
+    removeItemFromLocalStorage(e, e.target.previousElementSibling.previousElementSibling.textContent);
+
+    let amt = Number(e.target.previousElementSibling.textContent);
+
+    if(e.target.classList.contains("income__item--del")) {
+        values.currentBalance -= amt;
+        values.totalIncome -= amt;
+
+    } else if(e.target.classList.contains("expense__item--del")) {
+        values.currentBalance += amt;
+        values.totalExpense -= amt;
+
+    }
+
+    console.log(amt);
+
+    storageTotals.currBalance = values.currentBalance;
+    storageTotals.totIncome = values.totalIncome;
+    storageTotals.totExpense = values.totalExpense;
+
+    setTotalsToLocalStorage(storageTotals);
+
     displayTotals();
 
 });

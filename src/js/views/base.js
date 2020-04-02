@@ -9,6 +9,7 @@ export const elements = {
     transAmount: document.querySelector("#transaction-amount"),
     transType: document.querySelector("#type"),
     transBtn: document.querySelector("#submit"),
+    overallContainer: document.querySelector(".expense-container"),
     setBudget: "",
     budgBtn: ""
     
