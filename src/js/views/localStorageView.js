@@ -5,13 +5,12 @@ import { displayItem } from "./inputView";
 import { elements, values } from "./base";
 
 //Create function to display totals in display
-
-
 export const displayFromLocalStorage = () => {
+
     //Create storage variables
     let incomeItems;
     let expenseItems;
-    let totals;
+    let totals; 
 
     //check incomeItems for data
     if(localStorage.getItem("incomeItems") === null) {
@@ -54,6 +53,9 @@ export const displayFromLocalStorage = () => {
     //display total expense
     elements.statusDisplay.textContent = totals.totExpense;
 
-    
+    //Set calculation values
+    values.currentBalance = totals.currBalance;
+    values.totalIncome = totals.totIncome;
+    values.totalExpense = totals.totExpense;
 
 };

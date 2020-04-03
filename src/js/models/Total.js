@@ -1,7 +1,4 @@
-import {values} from "../views/base"
-//create function/s to calculate totals
-
-//Export functions
+import {values} from "../views/base";
 
 //Function to calculate totals
 export const calculateTotals = (type, amount) => {
@@ -18,12 +15,9 @@ export const calculateTotals = (type, amount) => {
         values.currentBalance -= Number(amount);
     }
 
-    console.log(values.currentBalance);
-    console.log(values.totalIncome);
-    console.log(values.totalExpense);
-
 }
 
+//Create object for storing totals in local storage
 export const storageTotals = {
 
 };

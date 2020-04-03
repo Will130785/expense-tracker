@@ -119,17 +119,30 @@
         </div>
 
         <!-- Set budget -->
-        <div class="set-budget">
-            <h2 class="set-budget__heading">Set budget</h2>
+        <div class="exchange">
+            <h2 class="exchange__heading">Exchange Rates</h2>
 
-            <!-- Set budget form -->
-            <form class="set-budget__form">
-                <label for="set-budget" class="set-budget__form--lab">Set budget</label>
-                <input id="set-budget" class="set-budget__form--in" type="number">
+            <!-- Exchange rate container -->
+            <div class="exchange__item">
+                <span class="exchange__item--flag">UK</span><span id="ukp" class="exchange__item--rate">0</span>
+            </div>
 
-                <!-- Submit button -->
-                <input type="submit" value="Set Budget" id="submit-budget" class="btn set-budget__form--btn">
-            </form>
+            <div class="exchange__item">
+                <span class="exchange__item--flag">Euro</span><span id="eur" class="exchange__item--rate">0</span>
+            </div>
+
+            <div class="exchange__item">
+                <span class="exchange__item--flag">US $</span><span id="usd" class="exchange__item--rate">0</span>
+            </div>
+
+            <div class="exchange__item">
+                <span class="exchange__item--flag">Canadian $</span><span id="cand" class="exchange__item--rate">0</span>
+            </div>
+
+            <div class="exchange__item">
+                <span class="exchange__item--flag">Thailand</span><span id="tbht" class="exchange__item--rate">0</span>
+            </div>
+            
         </div>
 
         <!-- Current Exchange Rates -->

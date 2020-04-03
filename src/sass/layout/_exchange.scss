@@ -1,0 +1,36 @@
+//Set budget section styling
+.exchange {
+    //Set grid position
+    grid-row: 9 / 10;
+    grid-column: 3 / 11;
+    //Define grid
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, min-content);
+    
+    &__heading {
+        text-align: center;
+        font-weight: 400;
+        font-size: 1.4rem;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &__item {
+        grid-column: 1 / -1;
+
+        &--flag {
+            display: inline-block;
+            margin: 1rem 2rem;
+
+        }
+
+        &--rate {
+            display: inline-block;
+            margin: 1rem 2rem;
+        }
+    }
+
+    
+
+}

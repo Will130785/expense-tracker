@@ -1,9 +1,4 @@
-//Create function to persist items to local storage
-
-//Create function to remove items from local storage
-
-//Create function to persist totals to local storage
-
+//Function to set items to local storage
 export const setToLocalStorage = (item) => {
     //Declare item and totals variables
     let incomeItems;

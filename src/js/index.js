@@ -1,4 +1,5 @@
 import "../sass/main.scss";
+import Exchange from "./models/Exchange";
 import {elements, values} from "./views/base";
 import {inputData} from "./models/Input";
 import {storageTotals, calculateTotals} from "./models/Total";
@@ -6,33 +7,23 @@ import {displayItem, removeItemFromDisplay} from "./views/inputView";
 import {displayTotals} from "./views/totalsView";
 import {setToLocalStorage, setTotalsToLocalStorage, removeItemFromLocalStorage} from "./models/LocalStorage";
 import {displayFromLocalStorage} from "./views/localStorageView";
-
-//import input data variables from Input.js
-//import functions from inputView.js
-//inport functions from Total.js
-//inport functions from totalsView.js
-//inport functions from LocalStorage.js
-//import function from localStorageView.js
+import {displayRates} from "./views/exchangeView";
 
 
+//hangle API call data
+const getRates = async () => {
+    
+    //Instantiate a new exchange object
+    let exchange = new Exchange();
 
+    //await results of getResults call
+    await exchange.getResults()
+    //Display exchange rates in UI
+    displayRates(exchange.res);
+}
 
-//Call function to display in UI
-
-//Call function to save to local storage
-
-//Call functions to calculate totals
-
-//Call functions to display totals in UI
-
-//Call function to store to local storage
-
-//Call function to display local storage items in UI
-
-//Call function to display local storage totals in UI
-
-
-
+//Execute get rates function to immediately display rates
+getRates();
 
 
 //Add event listeners
@@ -64,39 +55,55 @@ elements.transBtn.addEventListener("click", e => {
     //Set items and totals to local storage
     setToLocalStorage(inputData);
 
+    //Set totals to local storage
     setTotalsToLocalStorage(storageTotals);
 
     //Display totals
     displayTotals();
+
+    //Clear inputs
+    elements.transName.value = "";
+    elements.transAmount.value = "";
+    elements.transType.value = "";
 
 });
 
 //Event listener to remove item
 elements.overallContainer.addEventListener("click", e => {
 
+    //Remove item from the UI
     removeItemFromDisplay(e);
+    //Remove item from local storage
     removeItemFromLocalStorage(e, e.target.previousElementSibling.previousElementSibling.textContent);
 
+    //convert item amount to number
     let amt = Number(e.target.previousElementSibling.textContent);
 
+    //check if item is an income item
     if(e.target.classList.contains("income__item--del")) {
+        //Subtract income amount from overall balance
         values.currentBalance -= amt;
+        //Subtract income amount from income total
         values.totalIncome -= amt;
 
+    //Check if item is an expense item
     } else if(e.target.classList.contains("expense__item--del")) {
+        //Add expense amount to current balance
         values.currentBalance += amt;
+        //Subtract expense amount from total expense
         values.totalExpense -= amt;
 
     }
 
-    console.log(amt);
-
+    //prepare updated totals for storage object
     storageTotals.currBalance = values.currentBalance;
     storageTotals.totIncome = values.totalIncome;
     storageTotals.totExpense = values.totalExpense;
 
+    //Set updated totals to local storage
     setTotalsToLocalStorage(storageTotals);
 
+    //Display updated totals in ui
     displayTotals();
 
 });

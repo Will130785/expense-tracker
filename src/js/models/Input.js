@@ -1,6 +1,4 @@
-//capture input data variables
-//export data variables
-//Collect form data
+//Declare object to store input data
 export const inputData = {
     
 }

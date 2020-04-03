@@ -29,7 +29,9 @@ export const displayItem = (type, item, amt) => {
 
 //function to remove input data from UI
 export const removeItemFromDisplay = e => {
+    //Check delete button was clicked
     if(e.target.classList.contains("income__item--del") || e.target.classList.contains("expense__item--del")) {
+        //Remove element from UI
         e.target.parentElement.remove();
     } 
 

@@ -10,8 +10,11 @@ export const elements = {
     transType: document.querySelector("#type"),
     transBtn: document.querySelector("#submit"),
     overallContainer: document.querySelector(".expense-container"),
-    setBudget: "",
-    budgBtn: ""
+    ukpDisplay: document.querySelector("#ukp"),
+    eurDisplay: document.querySelector("#eur"),
+    usdDisplay: document.querySelector("#usd"),
+    candDisplay: document.querySelector("#cand"),
+    tbhtDisplay: document.querySelector("#tbht")
     
 }
 
@@ -21,10 +24,3 @@ export const values = {
     totalIncome: 0,
     totalExpense: 0,
 }
-
-// //Storage data
-// export const storage = {
-//     incomeItem: [],
-//     expenseItem: [],
-//     totals: [],
-// }
