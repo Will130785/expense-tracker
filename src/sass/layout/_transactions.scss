@@ -2,7 +2,7 @@
 .new-transaction {
     //Set grid position
     grid-row: 7 / 8;
-    grid-column: 3 / 11;
+    grid-column: 1 / -1;
     
     &__heading {
         text-align: center;
@@ -12,12 +12,14 @@
         //Apply form grid
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(7, 1fr);
+        grid-template-rows: repeat(7, min-content);
+        font-size: 1.4rem;
 
         //Transaction name label
         &--namelab {
             grid-column: 1 / -1;
             grid-row: 1 / 2;
+            margin-bottom: 1rem;
 
         }
 
@@ -25,7 +27,9 @@
         &--namein {
             grid-column: 1 / -1;
             grid-row: 2 / 3;
-            width: 100%
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
 
         }
 
@@ -33,7 +37,8 @@
         &--amlab {
             grid-column: 1 / -1;
             grid-row: 3 / 4;
-            width: 100%
+            width: 100%;
+            margin-bottom: 1rem;
 
         }
 
@@ -41,7 +46,9 @@
         &--amin {
             grid-column: 1 / -1;
             grid-row: 4 / 5;
-            width: 100%
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
 
         }
 
@@ -49,7 +56,8 @@
         &--typelab {
             grid-column: 1 / -1;
             grid-row: 5 / 6;
-            width: 100%
+            width: 100%;
+            margin-bottom: 1rem;
 
         }
 
@@ -57,7 +65,10 @@
         &--typein {
             grid-column: 1 / -1;
             grid-row: 6 / 7;
-            width: 100%
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid black;
+            margin-bottom: 2rem;
 
         }
 
@@ -66,6 +77,13 @@
             grid-column: 1 / -1;
             grid-row: 7 / 8;
             width: 100%;
+            padding: 1rem;
+            background-color: rgb(123, 196, 5);
+            color: white;
+            font-size: 1.4rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
         }
     }
 }

@@ -18,31 +18,56 @@
     //Income item
     &__item {
         text-align: left;
-        grid-column: 4 / 12;
+        grid-column: 1 / -1;
+
+        box-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.5);
+
+        //Set item grid
+        display: grid;
+        grid-template-columns: 2rem repeat(11, 1fr);
+        grid-template-rows: 3rem;
+        align-items: center;
 
         //Income icon
         &--pos {
-            display: inline-block;
-            margin-right: 2rem;
+            //Position icon
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            //Style icon box
+            background-color: red;
+            grid-column: 1 / 2;
+            height: 100%;
+            color: white;
+            font-size: 2rem;
 
         }
 
         //Name of income
         &--name {
             display: inline-block;
-            margin-right: 2rem;
+            grid-column: 3 / 9;
 
+        }
+
+        &--cur {
+            display: inline-block;
+            grid-column: 9 / 10;
         }
 
         //Amount of expense
         &--am {
             display: inline-block;
-            margin-right: 2rem;
+            grid-column: 10 / 11;
         }
 
         //Delete button
         &--del {
             display: inline-block;
+            grid-column: 12 / 13;
+            color: gold;
+            font-size: 2rem;
+            cursor: pointer;
 
         }
     }

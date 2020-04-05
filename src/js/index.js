@@ -29,7 +29,10 @@ getRates();
 //Add event listeners
 
 //Event listener for DOM content loaded
-document.addEventListener("DOMContentLoaded", displayFromLocalStorage);
+document.addEventListener("DOMContentLoaded", () => {
+    displayFromLocalStorage();
+    displayTotals();
+});
 
 //Event listener for add transaction
 elements.transBtn.addEventListener("click", e => {
@@ -38,7 +41,7 @@ elements.transBtn.addEventListener("click", e => {
 
     //Collect form data from inputs and store in inputData object
     inputData.transactionName = elements.transName.value;
-    inputData.transactionAmount = elements.transAmount.value;
+    inputData.transactionAmount = Number(elements.transAmount.value);
     inputData.transactionType = elements.transType.value;
 
     //Append transaction item to container

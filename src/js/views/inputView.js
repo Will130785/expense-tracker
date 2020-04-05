@@ -9,7 +9,7 @@ export const displayItem = (type, item, amt) => {
         //If type is income, append the income item to the income container
         html = `
     <div class="income__item">
-        <span class="income__item--pos">+</span><span class="income__item--name">${item}</span><span class="income__item--am">${amt}</span><span class="income__item--del">X</span>
+        <span class="income__item--pos">+</span><span class="income__item--name">${item}</span><span class="income__item--cur">£</span><span class="income__item--am">${amt.toFixed(2)}</span><span class="income__item--del">X</span>
     </div> 
     `
     elements.incomeContainer.insertAdjacentHTML("beforeend", html);
@@ -18,7 +18,7 @@ export const displayItem = (type, item, amt) => {
         //If type is expense, append the expense item to the expense container
         html = `
     <div class="expense__item">
-        <span class="expense__item--pos">-</span><span class="expense__item--name">${item}</span><span class="expense__item--am">${amt}</span><span class="expense__item--del">X</span>
+        <span class="expense__item--pos">-</span><span class="expense__item--name">${item}</span><span class="expense__item--cur">£</span><span class="expense__item--am">${amt.toFixed(2)}</span><span class="expense__item--del">X</span>
     </div> 
     `
     elements.expenseContainer.insertAdjacentHTML("beforeend", html);

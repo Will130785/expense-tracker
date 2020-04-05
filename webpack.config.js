@@ -27,6 +27,22 @@ module.exports = {
                 ]
             },
             {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name:"[name].[hash].[ext]",
+                        outputPath: "img"
+                    }
+                }
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    "html-loader"
+                ]
+            },
+            {
                 test: /\.js$/,
                 exclude: /node-modules/,
                 loader: "babel-loader"

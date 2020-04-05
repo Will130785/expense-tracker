@@ -2,7 +2,7 @@
 .exchange {
     //Set grid position
     grid-row: 9 / 10;
-    grid-column: 3 / 11;
+    grid-column: 1 / -1;
     //Define grid
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -22,6 +22,12 @@
         &--flag {
             display: inline-block;
             margin: 1rem 2rem;
+            
+
+            &-pic {
+                width: 2rem;
+                height: 2rem;
+            }
 
         }
 
