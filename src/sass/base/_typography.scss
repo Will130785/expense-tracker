@@ -3,6 +3,14 @@ body {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+//Application header
+.application-heading {
+
+    &__title {
+        font-weight: 400;
+    }
+}
+
 //Header Section
 .header-section {
     font-size: 1.6rem;
@@ -13,7 +21,7 @@ body {
 .income {
 
     &__heading {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 400;
     }
 
@@ -26,7 +34,7 @@ body {
 .expense {
 
     &__heading {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 400;
     }
 
@@ -49,7 +57,7 @@ body {
 .new-transaction {
 
     &__heading {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 400;
     }
 }

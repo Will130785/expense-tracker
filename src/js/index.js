@@ -77,7 +77,7 @@ elements.overallContainer.addEventListener("click", e => {
     //Remove item from the UI
     removeItemFromDisplay(e);
     //Remove item from local storage
-    removeItemFromLocalStorage(e, e.target.previousElementSibling.previousElementSibling.textContent);
+    removeItemFromLocalStorage(e, e.target.previousElementSibling.previousElementSibling.previousElementSibling.textContent);
 
     //convert item amount to number
     let amt = Number(e.target.previousElementSibling.textContent);

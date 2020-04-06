@@ -11,6 +11,15 @@
 html {
     //Root font size
     font-size: 62.5%; //Equates to 10px
+
+    @media only screen and(max-width: 900px) {
+        font-size: 55%;
+    }
+
+    @media only screen and(max-width: 500px) {
+        font-size: 45%;
+
+    }
 }
 
 body {
@@ -31,4 +40,14 @@ body {
     grid-template-rows: repeat(12, min-content);
     grid-row-gap: 2rem;
     // box-shadow: 0 .1rem .1rem rgba(0, 0, 0, 1);
+
+    @media only screen and(max-width: 900px) {
+        grid-column: 2 / 12;
+    }
+
+    @media only screen and(max-width: 500px) {
+        grid-column: 1 / -1;
+        padding: 1rem;
+        
+    }
 }

@@ -29,7 +29,7 @@
             grid-row: 2 / 3;
             width: 100%;
             padding: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
 
         }
 
@@ -48,7 +48,7 @@
             grid-row: 4 / 5;
             width: 100%;
             padding: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 3rem;
 
         }
 
@@ -68,7 +68,7 @@
             width: 100%;
             padding: 1rem;
             border: 1px solid black;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
         }
 
@@ -84,6 +84,11 @@
             border: none;
             border-radius: 1rem;
             cursor: pointer;
+            transition: all 1s;
+        }
+
+        &--btn:hover {
+            background-color: rgb(97, 156, 1);
         }
     }
 }
